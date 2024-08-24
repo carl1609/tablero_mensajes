@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .contenedor{
+            display: flex;
+            justify-content: center;
+            
+            justify-content: column;
+            ul{
+                list-style: none;
+            }
+            .title{
+                display: block;
+            }
+        }
+        .rojo{
+
+            color: rgb(165, 3, 3);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="contenedor">
+        <h1 class="title">mensajes</h1>
+        <ul>
+            {% for mensaje in mensajes %}
+                <li>
+                    <p><strong class="rojo">remintente:</strong>{{ mensaje.remitente }}</p>
+                    <p><strong class="rojo">destinatario:</strong>{{ mensaje.destinatario }}</p>
+                    <p><strong class="rojo">mensaje:</strong>{{ mensaje.texto_mensaje }}</p>
+                    <p><strong class="rojo">fecha y hora del envio:</strong>{{ mensaje.fecha_hora }}</p>
+                </li>
+                <br>
+            {% endfor %}
+        </ul>
+    </div>    
+</body>
+</html>
